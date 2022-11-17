@@ -52,8 +52,9 @@ class CreateMessage {
 }
 
 class MixWithOthersMessage {
-  MixWithOthersMessage(this.mixWithOthers);
+  MixWithOthersMessage(this.mixWithOthers, this.controlAVAudioSesson);
   bool mixWithOthers;
+  bool controlAVAudioSesson;
 }
 
 @HostApi(dartHostTestHandler: 'TestHostVideoPlayerApi')

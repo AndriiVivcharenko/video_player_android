@@ -21,7 +21,7 @@ class AndroidVideoPlayer extends VideoPlayerPlatform {
   }
 
   @override
-  Future<void> init() {
+  Future<void> init(bool controlAVAudioSession) {
     return _api.initialize();
   }
 
@@ -159,9 +159,11 @@ class AndroidVideoPlayer extends VideoPlayerPlatform {
   }
 
   @override
-  Future<void> setMixWithOthers(bool mixWithOthers) {
-    return _api
-        .setMixWithOthers(MixWithOthersMessage(mixWithOthers: mixWithOthers));
+  Future<void> setMixWithOthers(
+      bool mixWithOthers, bool controlAVAUdioSession) {
+    return _api.setMixWithOthers(MixWithOthersMessage(
+        mixWithOthers: mixWithOthers,
+        controlAVAudioSesson: controlAVAUdioSession));
   }
 
   EventChannel _eventChannelFor(int textureId) {
